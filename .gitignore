@@ -1,3 +1,9 @@
+# VSCode-specific ignores
+.vscode
+
+# MacOS-specific ignores
+.DS_Store
+
 # Godot 4+ specific ignores
 .godot/
 
