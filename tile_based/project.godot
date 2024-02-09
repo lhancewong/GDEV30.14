@@ -16,9 +16,8 @@ config/features=PackedStringArray("4.2")
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=176
-window/size/initial_screen=1920
+window/size/viewport_width=328
+window/size/viewport_height=184
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
