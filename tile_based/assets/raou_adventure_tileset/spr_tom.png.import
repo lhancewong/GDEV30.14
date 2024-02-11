@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1frlod4gp6hd"
-path="res://.godot/imported/spr_alex.png-dedd1af4e8f8192ceb5768a36e65e411.ctex"
+uid="uid://bejmhwasm4532"
+path="res://.godot/imported/spr_tom.png-2485384c15cdc5496898da057914c9aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raou_adventure_tileset/spr_alex.png"
-dest_files=["res://.godot/imported/spr_alex.png-dedd1af4e8f8192ceb5768a36e65e411.ctex"]
+source_file="res://assets/raou_adventure_tileset/spr_tom.png"
+dest_files=["res://.godot/imported/spr_tom.png-2485384c15cdc5496898da057914c9aa.ctex"]
 
 [params]
 

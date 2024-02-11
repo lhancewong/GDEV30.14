@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beqnc4ocws71c"
-path="res://.godot/imported/spr_anna.png-2b30a98121916575676969fbfa5bed44.ctex"
+uid="uid://d2plgfbca80ee"
+path="res://.godot/imported/slime.png-1b4ea361105f635308bfce617b29938f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raou_adventure_tileset/spr_anna.png"
-dest_files=["res://.godot/imported/spr_anna.png-2b30a98121916575676969fbfa5bed44.ctex"]
+source_file="res://assets/raou_adventure_tileset/slime.png"
+dest_files=["res://.godot/imported/slime.png-1b4ea361105f635308bfce617b29938f.ctex"]
 
 [params]
 

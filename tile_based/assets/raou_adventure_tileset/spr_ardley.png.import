@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b10n763mg4sjj"
-path="res://.godot/imported/spr_ester.png-7a60a7416e0553314d49602b99448b8b.ctex"
+uid="uid://yclvm12y6dbr"
+path="res://.godot/imported/spr_ardley.png-3c69960acef2475242d392ec4299f8c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raou_adventure_tileset/spr_ester.png"
-dest_files=["res://.godot/imported/spr_ester.png-7a60a7416e0553314d49602b99448b8b.ctex"]
+source_file="res://assets/raou_adventure_tileset/spr_ardley.png"
+dest_files=["res://.godot/imported/spr_ardley.png-3c69960acef2475242d392ec4299f8c8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgya251u6tgg4"
-path="res://.godot/imported/spr_colt.png-726becc6a08b32a5640782761d4b7a98.ctex"
+uid="uid://c1frlod4gp6hd"
+path="res://.godot/imported/spr_alex.png-e361da2d9becb104a5c61131df088b76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raou_adventure_tileset/spr_colt.png"
-dest_files=["res://.godot/imported/spr_colt.png-726becc6a08b32a5640782761d4b7a98.ctex"]
+source_file="res://assets/raou_adventure_tileset/spr_alex.png"
+dest_files=["res://.godot/imported/spr_alex.png-e361da2d9becb104a5c61131df088b76.ctex"]
 
 [params]
 

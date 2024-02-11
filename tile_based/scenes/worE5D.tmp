@@ -179,5 +179,3 @@ position_smoothing_speed = 100.0
 [node name="RayCast2D" type="RayCast2D" parent="Player"]
 unique_name_in_owner = true
 target_position = Vector2(2.08165e-12, 16)
-
-[node name="TransitionCamera" type="Camera2D" parent="."]

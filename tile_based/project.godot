@@ -13,6 +13,7 @@ config_version=5
 config/name="Tile Based"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2")
+run/max_fps=240
 
 [display]
 

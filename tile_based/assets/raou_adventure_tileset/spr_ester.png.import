@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2plgfbca80ee"
-path="res://.godot/imported/slime.png-72ccfb04954fdf61e7faf3cc80207165.ctex"
+uid="uid://b10n763mg4sjj"
+path="res://.godot/imported/spr_ester.png-bc5cb8b466f257ed2c694c8058f44c7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raou_adventure_tileset/slime.png"
-dest_files=["res://.godot/imported/slime.png-72ccfb04954fdf61e7faf3cc80207165.ctex"]
+source_file="res://assets/raou_adventure_tileset/spr_ester.png"
+dest_files=["res://.godot/imported/spr_ester.png-bc5cb8b466f257ed2c694c8058f44c7a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyrabauiphl1q"
-path="res://.godot/imported/topDown_baseTiles.png-c8c3c532ba1f1f2a8e3568b0711d58bc.ctex"
+uid="uid://cgya251u6tgg4"
+path="res://.godot/imported/spr_colt.png-42f4259e9e808956c4aae0a5f4a8bd28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raou_adventure_tileset/topDown_baseTiles.png"
-dest_files=["res://.godot/imported/topDown_baseTiles.png-c8c3c532ba1f1f2a8e3568b0711d58bc.ctex"]
+source_file="res://assets/raou_adventure_tileset/spr_colt.png"
+dest_files=["res://.godot/imported/spr_colt.png-42f4259e9e808956c4aae0a5f4a8bd28.ctex"]
 
 [params]
 
