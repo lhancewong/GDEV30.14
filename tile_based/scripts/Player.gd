@@ -1,23 +1,29 @@
 extends Node2D
 
-@onready var ray = %RayCast2D
+@onready var ray_forward = %RayCastForward
+@onready var ray_backward = %RayCastBackward
 @onready var asprite_anchor = $Anchor
 @onready var asprite = %AnimatedSprite2D
 @onready var tile_map = %TileMap
 @onready var player_camera = %Camera2D
 @onready var transition_camera = $"../TransitionCamera"
+@onready var on_fire_emoji = %On_Fire_Emoji
 
 var tile_size = 16
 var walking_speed = 1
 var moving = false
 var camera_transitioning = false
+var burning = false
 
 var input_buffer = [Vector2.ZERO]
 var input_buffer_readout = Vector2()
 
+signal walked
+
 
 # Called when node first enters the scene
 func _ready():
+	on_fire_emoji.visible = false
 	process_tile_data()
 	player_camera.make_current()
 
@@ -32,6 +38,7 @@ func _physics_process(delta):
 	if global_position == asprite_anchor.global_position:
 		moving = false
 		process_tile_data()
+		walked.emit()
 		return
 
 	# Move sprite toward target tile with walking speed
@@ -45,7 +52,7 @@ func _process(delta):
 	read_input()
 
 	# If player or camera is moving don't accept input
-	if moving or camera_transitioning:
+	if moving or camera_transitioning or burning:
 		return
 
 	# If player isn't moving, stop animations
@@ -65,12 +72,16 @@ func move(dir):
 		current_tile.y + dir.y,
 	)
 
-	# Point RayCast to movement direction
-	ray.target_position = dir * tile_size
-	ray.force_raycast_update()
+	# Point RayCastForward to movement direction
+	ray_forward.target_position = dir * tile_size
+	ray_forward.force_raycast_update()
+
+	# Point RayCastBackward opposite to movement direction
+	ray_backward.target_position = Vector2(-dir.x, -dir.y) * tile_size
+	ray_backward.force_raycast_update()
 
 	# If theres a wall in movement direction don't move
-	if ray.is_colliding():
+	if ray_forward.is_colliding():
 		return
 
 	moving = true
@@ -79,6 +90,36 @@ func move(dir):
 	# Sets the player's sprite back to the previous tile to be animated
 	asprite_anchor.global_position = tile_map.map_to_local(current_tile)
 	animate(dir)
+
+
+# Uses RayCastBackward to move the player backward
+func move_back():
+	var ray_dir: Vector2 = ray_backward.get_target_position()
+	var move_dir: Vector2 = Vector2(ray_dir.x / 16, ray_dir.y / 16)
+	move(move_dir)
+
+
+func on_fire():
+	# Can't burn twice
+	if burning:
+		return
+
+	# Array of all movement directions
+	var dir_list = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
+
+	# Randomly chooses a direction to move in 13 times
+	burning = true
+	on_fire_emoji.visible = true
+	for i in 13:
+		# Handles outlier behavior
+		if ray_forward.is_colliding():
+			move_back()
+		await self.walked
+		walking_speed = 3
+		var rand_dir = dir_list[randi() % dir_list.size()]
+		move(rand_dir)
+	burning = false
+	on_fire_emoji.visible = false
 
 
 # Teleports to a door at map_coord
@@ -149,7 +190,11 @@ func process_tile_data():
 		walking_speed = 1
 	elif tile_data.get_custom_data("type") == 1:  # Stepped on a path tile
 		walking_speed = 1.5
-	elif tile_data.get_custom_data("type") == 8:  # Stepped on door1 at (4,5)
+	elif tile_data.get_custom_data("type") == 2:  # Stepped on a flower tile
+		move_back()
+	elif tile_data.get_custom_data("type") == 3:  # Stepped on a fireplace tile
+		on_fire()
+	elif tile_data.get_custom_data("type") == 8:  # Stepped in door1 at (4,5)
 		teleport_to_door(Vector2i(54, 4))
-	elif tile_data.get_custom_data("type") == 9:  # Stepped on door2 at (54, 4)
+	elif tile_data.get_custom_data("type") == 9:  # Stepped in door2 at (54, 4)
 		teleport_to_door(Vector2i(4, 5))
