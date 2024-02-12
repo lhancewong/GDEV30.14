@@ -38,6 +38,7 @@ func _physics_process(delta):
 	if global_position == asprite_anchor.global_position:
 		moving = false
 		process_tile_data()
+		asprite.stop()
 		walked.emit()
 		return
 
@@ -80,6 +81,8 @@ func move(dir):
 	ray_backward.target_position = Vector2(-dir.x, -dir.y) * tile_size
 	ray_backward.force_raycast_update()
 
+	animate(dir)
+
 	# If theres a wall in movement direction don't move
 	if ray_forward.is_colliding():
 		return
@@ -89,7 +92,6 @@ func move(dir):
 	global_position = tile_map.map_to_local(target_tile)
 	# Sets the player's sprite back to the previous tile to be animated
 	asprite_anchor.global_position = tile_map.map_to_local(current_tile)
-	animate(dir)
 
 
 # Uses RayCastBackward to move the player backward
