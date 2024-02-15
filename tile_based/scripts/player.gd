@@ -101,6 +101,14 @@ func move_back():
 	move(move_dir)
 
 
+# Uses RayCastForward to move the player forward
+func move_forward():
+	var ray_dir: Vector2 = ray_forward.get_target_position()
+	var move_dir: Vector2 = Vector2(ray_dir.x / 16, ray_dir.y / 16)
+	move(move_dir)
+
+
+# Forces movement in random directions
 func on_fire():
 	# Can't burn twice
 	if burning:
@@ -149,6 +157,9 @@ func teleport_to_door(map_coord: Vector2i):
 
 # Handles player movement animations
 func animate(dir):
+	var current_frame = asprite.get_frame()
+	var current_progress = asprite.get_frame_progress()
+
 	if dir == Vector2.RIGHT:
 		asprite.play("player_walk_right")
 	elif dir == Vector2.LEFT:
@@ -157,6 +168,8 @@ func animate(dir):
 		asprite.play("player_walk_up")
 	elif dir == Vector2.DOWN:
 		asprite.play("player_walk_down")
+
+	asprite.set_frame_and_progress(current_frame, current_progress)
 
 
 # Handles adding input to an input buffer for smoother movement
@@ -196,7 +209,17 @@ func process_tile_data():
 		move_back()
 	elif tile_data.get_custom_data("type") == 3:  # Stepped on a fireplace tile
 		on_fire()
+	elif tile_data.get_custom_data("type") == 4:  # Stepped on a fireplace tile
+		move_forward()
 	elif tile_data.get_custom_data("type") == 8:  # Stepped in door1 at (4,5)
 		teleport_to_door(Vector2i(54, 4))
 	elif tile_data.get_custom_data("type") == 9:  # Stepped in door2 at (54, 4)
 		teleport_to_door(Vector2i(4, 5))
+	elif tile_data.get_custom_data("type") == 20:  # Stepped in down tile
+		move(Vector2.DOWN)
+	elif tile_data.get_custom_data("type") == 21:  # Stepped in right tile
+		move(Vector2.RIGHT)
+	elif tile_data.get_custom_data("type") == 22:  # Stepped in up tile
+		move(Vector2.UP)
+	elif tile_data.get_custom_data("type") == 23:  # Stepped in left tile
+		move(Vector2.LEFT)
