@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://qqc643ylhmtb"
+path.s3tc="res://.godot/imported/Gun_B-a76b44ca4c933bacea8b965a298bacf7_T_Weapons.png-8b74c797546483c733b6f9adc6c10cbf.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://models/guns/Gun_B-a76b44ca4c933bacea8b965a298bacf7_T_Weapons.png"
+dest_files=["res://.godot/imported/Gun_B-a76b44ca4c933bacea8b965a298bacf7_T_Weapons.png-8b74c797546483c733b6f9adc6c10cbf.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
