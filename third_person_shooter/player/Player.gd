@@ -14,6 +14,7 @@ var t_bob = 0.0
 @onready var body = %Body
 @onready var camera_pivot = %CameraPivot
 @onready var camera = %Camera3D
+@onready var gun_anim = %CameraPivot/gun/AnimationPlayer
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
@@ -63,8 +64,12 @@ func _physics_process(delta):
 	# body bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	body.transform.origin = _headbob(t_bob)
+	if Input.is_action_pressed("shoot"):
+		if !gun_anim.is_playing():
+			gun_anim.play("shoot")
 
 	move_and_slide()
+	
 
 
 func _headbob(time) -> Vector3:

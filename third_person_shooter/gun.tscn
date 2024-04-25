@@ -1,5 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8rx28gbjct48"]
+[gd_scene load_steps=5 format=3 uid="uid://b8rx28gbjct48"]
 
 [ext_resource type="PackedScene" uid="uid://dblo64gl568m7" path="res://models/guns/gun.glb" id="1_l2ogl"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6se7v"]
+metallic = 1.0
+
+[sub_resource type="Animation" id="Animation_1gr70"]
+resource_name = "shoot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.2, -0.01, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_repi4"]
+_data = {
+"shoot": SubResource("Animation_1gr70")
+}
+
 [node name="gun" instance=ExtResource("1_l2ogl")]
+
+[node name="Mesh" parent="root" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6se7v")
+
+[node name="Mesh2" parent="root" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6se7v")
+
+[node name="Mesh3" parent="root" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6se7v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_repi4")
+}

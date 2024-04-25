@@ -268,12 +268,12 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.686019, 0.678239, 1.42263)
 
 [node name="gun" parent="Player/CameraPivot" instance=ExtResource("11_kx1uv")]
-transform = Transform3D(-0.000843018, 0, -1.15, 0, 1, 0, 1.15, 0, -0.000843018, 0.420896, -0.644168, -2.22776)
+transform = Transform3D(-0.000843018, 0, -1.15, 0, 1, 0, 1.15, 0, -0.000843018, 0.660226, -0.391518, -2.22776)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraPivot"]
-spring_length = 1.5
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.898016)
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot/SpringArm3D"]
 unique_name_in_owner = true
-transform = Transform3D(0.998356, 0, 0.0573201, 0, 1, 0, -0.0573201, 0, 0.998356, 0.155992, 0.339656, 0.852824)
+transform = Transform3D(0.998356, 0, 0.0573201, 0, 1, 0, -0.0573201, 0, 0.998356, 0.155992, 0.179681, 0.852824)
