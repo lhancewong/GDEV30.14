@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cyh0l14wvmbug"]
+[gd_scene load_steps=34 format=3 uid="uid://cyh0l14wvmbug"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_w0tuu"]
 [ext_resource type="ArrayMesh" uid="uid://b3d3cjywwabse" path="res://models/buildings/large_building/LargeBuilding01.obj" id="2_on20f"]
@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d3trx41a50bto" path="res://models/buildings/tall_building_02/TallBuilding02.obj" id="8_1d6s2"]
 [ext_resource type="ArrayMesh" uid="uid://bmfgyssbyh1ik" path="res://models/buildings/tall_building_03/TallBuilding03.obj" id="9_or7rd"]
 [ext_resource type="ArrayMesh" uid="uid://chbl4agov40hk" path="res://models/buildings/tiny_building/TinyBuilding01.obj" id="10_7037r"]
+[ext_resource type="PackedScene" uid="uid://b8rx28gbjct48" path="res://gun.tscn" id="11_kx1uv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dsple"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -266,9 +267,13 @@ shape = SubResource("ConvexPolygonShape3D_vdv4f")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.686019, 0.678239, 1.42263)
 
+[node name="gun" parent="Player/CameraPivot" instance=ExtResource("11_kx1uv")]
+transform = Transform3D(-0.000843018, 0, -1.15, 0, 1, 0, 1.15, 0, -0.000843018, 0.420896, -0.644168, -2.22776)
+
 [node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraPivot"]
 spring_length = 1.5
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot/SpringArm3D"]
 unique_name_in_owner = true
+transform = Transform3D(0.998356, 0, 0.0573201, 0, 1, 0, -0.0573201, 0, 0.998356, 0.155992, 0.339656, 0.852824)
