@@ -40,7 +40,7 @@ func start_turn() -> void:
 	if (randi() % 50) >= 20:
 		_play_heal_anim()
 		await get_tree().create_timer(0.6).timeout
-
+		_heal_self()
 	_play_attack_anim()
 	await get_tree().create_timer(0.6).timeout
 	deal_damage.emit(_get_attack_damage())

@@ -139,11 +139,13 @@ func _check_for_battle_end() -> bool:
 		_show_battle_end_panel(
 			"[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]Player won!"
 		)
+		$CanvasLayer/BattleEndPanel/BattleEndWin.play()
 		return true
 	elif player_battlers.is_empty():
 		_show_battle_end_panel(
 			"[center][color=red][shake rate=20.0 level=5 connected=1]Player lost!"
 		)
+		$CanvasLayer/BattleEndPanel/BattleEndLose.play()
 		return true
 	return false
 

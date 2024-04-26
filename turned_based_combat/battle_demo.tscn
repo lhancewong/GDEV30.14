@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpumty87felgc"]
+[gd_scene load_steps=17 format=3 uid="uid://cpumty87felgc"]
 
 [ext_resource type="Script" path="res://battle_demo.gd" id="1_f2em8"]
 [ext_resource type="Texture2D" uid="uid://ciu643fgomam" path="res://imgs/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_nrdtq"]
@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://dulgyo4c03paf" path="res://battler/resources/stats/enemies/vampire.tres" id="8_fxxhv"]
 [ext_resource type="Resource" uid="uid://cg50gjnrng0tm" path="res://battler/resources/stats/enemies/skeleton2.tres" id="9_0d7wc"]
 [ext_resource type="FontFile" uid="uid://cgrgjim4jsllh" path="res://misc/m5x7.ttf" id="10_605n0"]
+[ext_resource type="AudioStream" uid="uid://cp40aioiqmn4c" path="res://misc/happyhappyhappy.mp3" id="12_13xip"]
+[ext_resource type="AudioStream" uid="uid://cfmwjlix8mhhx" path="res://misc/gutstheme.mp3" id="13_4yi4d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr0as"]
 texture = ExtResource("1_nrdtq")
@@ -233,3 +235,9 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("10_605n0")
 theme_override_font_sizes/normal_font_size = 32
 text = "yahallo"
+
+[node name="BattleEndWin" type="AudioStreamPlayer2D" parent="CanvasLayer/BattleEndPanel"]
+stream = ExtResource("12_13xip")
+
+[node name="BattleEndLose" type="AudioStreamPlayer2D" parent="CanvasLayer/BattleEndPanel"]
+stream = ExtResource("13_4yi4d")
