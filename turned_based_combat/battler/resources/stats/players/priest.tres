@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BattlerStats" load_steps=4 format=3 uid="uid://c1f82wtua8ew6"]
+
+[ext_resource type="Script" path="res://battler/resources/stats/battler_stats_res.gd" id="1_wc71h"]
+[ext_resource type="Texture2D" uid="uid://13s620ytldg4" path="res://imgs/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Character.png" id="2_srg6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrytm"]
+atlas = ExtResource("2_srg6q")
+region = Rect2(16, 32, 16, 16)
+
+[resource]
+script = ExtResource("1_wc71h")
+sprite = SubResource("AtlasTexture_rrytm")
+type = 0
+max_hp = 1000
+min_damage = 350
+max_damage = 400
+turn_speed = 60
+skill_index = 2
